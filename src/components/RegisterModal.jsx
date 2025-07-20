@@ -8,7 +8,7 @@ function RegisterModal({ closeModal, setError }) {
 
   const handleRegister = async () => {
     try {
-      const response = await fetch(`${API_BASE_URL}/api/register`, {
+      const response = await fetch(`${API_BASE_URL}api/register`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ username, password }),
