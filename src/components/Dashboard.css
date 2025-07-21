@@ -20,37 +20,48 @@ body {
   animation: fadeIn 0.5s ease-in-out;
 }
 
-.dashboard-container h1 {
-  font-size: 2rem;
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #ffffff;
+  padding: 1rem 2rem;
+  border-bottom: 1px solid #e2e8f0;
+  margin: -2rem -2rem 2rem -2rem; /* Offset container padding */
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+}
+
+.navbar-title {
+  font-size: 1.5rem;
   color: #1a202c;
-  margin-bottom: 1rem;
   font-weight: 600;
-  text-align: center;
+  margin: 0;
 }
 
-.dashboard-container p {
-  font-size: 1rem;
-  color: #4a5568;
-  margin-bottom: 1rem;
-  text-align: center;
-}
-
-.dashboard-container button {
-  padding: 0.75rem 1.5rem;
-  font-size: 1rem;
+.navbar-logout {
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem;
   font-weight: 500;
   border: none;
   border-radius: 8px;
   cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.2s ease;
   background-color: #007bff;
   color: #ffffff;
-  margin-bottom: 1.5rem;
+  transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
-.dashboard-container button:hover {
+.navbar-logout:hover {
   background-color: #0056b3;
   transform: translateY(-2px);
+}
+
+.dashboard-container h2 {
+  font-size: 1.5rem;
+  color: #1a202c;
+  margin-bottom: 1rem;
+  font-weight: 600;
+  text-align: center;
 }
 
 .error {
@@ -86,12 +97,19 @@ body {
 
 .todo-form button {
   padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 500;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
   background-color: #007bff;
   color: #ffffff;
+  transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 .todo-form button:hover {
   background-color: #0056b3;
+  transform: translateY(-2px);
 }
 
 .todo-list {
@@ -135,6 +153,11 @@ body {
 .todo-list li button {
   padding: 0.5rem 1rem;
   font-size: 0.875rem;
+  font-weight: 500;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 .todo-list li button:first-of-type {
@@ -171,12 +194,24 @@ body {
     margin: 1rem;
   }
 
-  .dashboard-container h1 {
-    font-size: 1.5rem;
+  .navbar {
+    padding: 1rem;
+    margin: -1.5rem -1.5rem 1.5rem -1.5rem;
+    flex-direction: column;
+    gap: 0.75rem;
   }
 
-  .dashboard-container p {
-    font-size: 0.875rem;
+  .navbar-title {
+    font-size: 1.25rem;
+  }
+
+  .navbar-logout {
+    font-size: 0.75rem;
+    padding: 0.4rem 0.8rem;
+  }
+
+  .dashboard-container h2 {
+    font-size: 1.25rem;
   }
 
   .todo-form {
@@ -186,7 +221,6 @@ body {
 
   .todo-form input,
   .todo-form button,
-  .dashboard-container button,
   .todo-list li input,
   .todo-list li button {
     font-size: 0.875rem;

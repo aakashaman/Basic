@@ -6,7 +6,7 @@ function Dashboard({ user, setIsAuthenticated }) {
   const [todos, setTodos] = useState([]);
   const [newTodo, setNewTodo] = useState('');
   const [error, setError] = useState('');
-  const [editingTasks, setEditingTasks] = useState({}); // Track edited tasks
+  const [editingTasks, setEditingTasks] = useState({});
   const navigate = useNavigate();
   const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:5000';
 
@@ -23,7 +23,6 @@ function Dashboard({ user, setIsAuthenticated }) {
       const data = await response.json();
       if (response.ok) {
         setTodos(data);
-        // Initialize editingTasks with current tasks
         const initialEditingTasks = {};
         data.forEach((todo) => {
           initialEditingTasks[todo.id] = todo.task;
@@ -122,9 +121,11 @@ function Dashboard({ user, setIsAuthenticated }) {
 
   return (
     <div className="dashboard-container">
-      <h1>Todo Dashboard</h1>
-      <p>Welcome, {user.username}!</p>
-      <button onClick={handleLogout}>Logout</button>
+      <nav className="navbar">
+        <h1 className="navbar-title">Todo App</h1>
+        <button className="navbar-logout" onClick={handleLogout}>Logout</button>
+      </nav>
+      <h2>Welcome, {user.username}!</h2>
       {error && <p className="error">{error}</p>}
       <div className="todo-form">
         <input
